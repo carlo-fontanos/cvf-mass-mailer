@@ -1,0 +1,5 @@
+.mass-mailer-editor .preview-email { margin-top: 20px; }
+.mass-mailer-editor .preview-email p { margin-bottom: 10px; }
+.mass-mailer-editor .wp-picker-container { position: relative; top: 8px; }
+.mass-mailer-editor .wp-picker-container .iris-picker { position: absolute; z-index: 99; }
+.notice, div.error, div.updated { margin-left: 0; }
