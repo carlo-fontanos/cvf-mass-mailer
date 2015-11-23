@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: WP Mass Mailer
- * Plugin URI: http://carlofontanos.com/product/wp-mass-mailer-plugin/
+ * Plugin Name: CVF Mass Mailer
+ * Plugin URI: http://carlofontanos.com/product/cvf-mass-mailer-plugin/
  * Description: Simple yet powerful mass mailer plugin for WordPress
  * Version: 1.0
  * Author: Carl Victor C. Fontanos
  * Author URI: http://carlofontanos.com
- * Text Domain: wp-mass-mailer
+ * Text Domain: cvf-mass-mailer
  * License: 
  */
  
@@ -27,10 +27,10 @@
 	
 */
 
-define( 'WP_MASS_MAILER_FILE', __FILE__ );
-define( 'WP_MASS_MAILER_PLUGIN_DIR', plugin_dir_path( WP_MASS_MAILER_FILE ) );
-define( 'WP_MASS_MAILER_PLUGIN_URL', plugin_dir_url( WP_MASS_MAILER_FILE ) );
-define( 'WP_MASS_MAILER_AUTHOR', 'Carl Victor Fontanos');
-define( 'WP_MASS_MAILER_AUTHOR_URL', 'www.carlofontanos.com');
+define( 'CVF_MASS_MAILER_FILE', __FILE__ );
+define( 'CVF_MASS_MAILER_PLUGIN_DIR', plugin_dir_path( CVF_MASS_MAILER_FILE ) );
+define( 'CVF_MASS_MAILER_PLUGIN_URL', plugin_dir_url( CVF_MASS_MAILER_FILE ) );
+define( 'CVF_MASS_MAILER_AUTHOR', 'Carl Victor Fontanos');
+define( 'CVF_MASS_MAILER_AUTHOR_URL', 'www.carlofontanos.com');
 
-require_once( WP_MASS_MAILER_PLUGIN_DIR . '/inc/WP_Mass_Mailer.class.php' );
+require_once( CVF_MASS_MAILER_PLUGIN_DIR . '/inc/CVF_Mass_Mailer.class.php' );

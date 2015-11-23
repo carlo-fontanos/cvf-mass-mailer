@@ -1,6 +1,6 @@
 
 /**
- *  wpmm Class
+ *  cvfmm Class
  *
  *  @since	 		4.2.4
  *  @created		08/14/2015
@@ -9,22 +9,22 @@
  */
 
 /**
- * Setup a wpmm namespace to prevent JS conflicts.
+ * Setup a cvfmm namespace to prevent JS conflicts.
  *
  * @type {
  * {
- * WP_Mass_Mailer: WP_Mass_Mailer
+ * CVF_Mass_Mailer: CVF_Mass_Mailer
  * }
  * }
  */
-var wpmm = {
+var cvfmm = {
 	
 	/**
 	 *
-	 * WP Mass Mailer
+	 * CVF Mass Mailer
 	 *
 	 */
-	WP_Mass_Mailer: function () {
+	CVF_Mass_Mailer: function () {
 		
 		/**
 		 * Generate Email Preview
@@ -43,17 +43,17 @@ var wpmm = {
 				} else if(email_content == '') {
 					alert('Please enter a content before generating a preview');				
 				} else {
-					$(".preview-email").html('<p><img src = "' + wpmmphp.loading_image + '" class = "loader" /></p>'); 
+					$(".preview-email").html('<p><img src = "' + cvfmmphp.loading_image + '" class = "loader" /></p>'); 
 					var data = {
-						'action': 'cvf_wpmm_preview_email',
-						'cvf_wpmm_action': 'cvf_wpmm_preview_email_action',
+						'action': 'cvf_mm_preview_email',
+						'cvf_mm_action': 'cvf_mm_preview_email_action',
 						'subject': email_subject,
 						'subject_color': email_subject_color,
 						'subject_show_hide': email_subject_show_hide,
 						'content': email_content
 					};
 					
-					$.post(wpmmphp.ajax_url, data, function(response) {
+					$.post(cvfmmphp.ajax_url, data, function(response) {
 						element = $('.preview-email');		
 						$(element).html($(response).fadeIn('slow'));
 						$('.generate_preview').val('Regenerate Preview')
@@ -85,10 +85,10 @@ var wpmm = {
 					} else if(email_content == '') {
 						alert('Email Content can not be empty');					
 					} else {
-						$(".mass-email-response").html('<p><img src = "' + wpmmphp.loading_image + '" class = "loader" /></p>'); 
+						$(".mass-email-response").html('<p><img src = "' + cvfmmphp.loading_image + '" class = "loader" /></p>'); 
 						var data = {
-							'action': 'cvf_wpmm_send_email',
-							'cvf_wpmm_action': 'cvf_wpmm_send_email_action',
+							'action': 'cvf_mm_send_email',
+							'cvf_mm_action': 'cvf_mm_send_email_action',
 							'subject': email_subject,
 							'subject_color': email_subject_color,
 							'subject_show_hide': email_subject_show_hide,
@@ -96,7 +96,7 @@ var wpmm = {
 							'content': email_content
 						};
 						
-						$.post(wpmmphp.ajax_url, data, function(response) {
+						$.post(cvfmmphp.ajax_url, data, function(response) {
 							element = $('.mass-email-response');											
 							if(response == '1'){
 								$(element).html('<div id="message" class="updated"><p><strong>Email successfully sent</strong></p></div>');
@@ -121,8 +121,8 @@ var wpmm = {
 var $ =jQuery.noConflict();
 $(document).ready(function($) {
 	
-	// Load WP_Mass_Mailer class methods
-	mass_mailer = new wpmm.WP_Mass_Mailer();
+	// Load CVF_Mass_Mailer class methods
+	mass_mailer = new cvfmm.CVF_Mass_Mailer();
 	mass_mailer.cvf_generate_preview();
 	mass_mailer.cvf_send_mass_email();
 	
